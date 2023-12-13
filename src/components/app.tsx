@@ -1,16 +1,17 @@
+import TodoList from "./TodoList";
 import CheckoutForm from "./formMP";
 import Navbarts from "./navbar";
 
 const App = () => {
 
-    
+
 
     return (
         <>
-            <div >
+            <div className="uk-container" >
                 <Navbarts />
-                <h1>Todo List</h1>
-                <br />
+               
+                <TodoList />
 
             </div>
         </>
