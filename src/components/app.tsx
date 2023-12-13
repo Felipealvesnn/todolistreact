@@ -1,21 +1,20 @@
+import CheckoutForm from "./formMP";
+import Navbarts from "./navbar";
+
 const App = () => {
 
-    const estilo = {
-      height: "100vh",
-      alignItems: "center",
-      display: "flex",
-      justifyContent: "center",
-      justifyItems: "center"
-    };
-  
+    
+
     return (
-      <>
-        <div style={estilo}>
-          <h1>Todo List</h1>
-        </div>
-      </>
+        <>
+            <div >
+                <Navbarts />
+                <h1>Todo List</h1>
+                <br />
+
+            </div>
+        </>
     );
-  }
-  
-  export default App;
-  
+}
+
+export default App;
