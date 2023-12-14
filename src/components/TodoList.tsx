@@ -1,10 +1,23 @@
 import { useState } from "react";
+import { Todo } from "../models/Todo";
 
 
-const TodoList : React.FC  = () => {
-  
+const TodoList: React.FC = () => {
+
     const [task, setTask] = useState<string>("");
-    const Todo = [];
+    const Todos: Todo[] = [{
+        id: 1,
+        task: "Task 1",
+        description: "Description 1",
+        done: false
+    },
+    {
+        id: 2,
+        task: "Task 2",
+        description: "Description 2",
+        done: false
+    },
+    ];
 
     return (
         <div>
@@ -19,8 +32,8 @@ const TodoList : React.FC  = () => {
 
                             </div>
                             <div className="uk-margin">
-                            <textarea className="uk-textarea" rows={5} placeholder="Description"></textarea>
-                        </div>
+                                <textarea className="uk-textarea" rows={5} placeholder="Description"></textarea>
+                            </div>
                             <div className="uk-margin">
                                 <button className="uk-button uk-button-primary">Add</button>
                             </div>

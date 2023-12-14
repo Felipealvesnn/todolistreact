@@ -1,9 +1,9 @@
 export class Todo{
 
-    id: number;
-    task: string;
-    description: string;
-    done: boolean;
+    id?: number;
+    task?: string;
+    description?: string;
+    done?: boolean;
 
     constructor(id: number, task: string, description: string, done: boolean){
         this.id = id;
