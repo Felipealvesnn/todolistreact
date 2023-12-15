@@ -2,13 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 import App from './components/app';
+import TodoProvider from './contexts/todoContex';
 
 const root = ReactDOM.createRoot(
   document.getElementById('PrinciapRoot') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <TodoProvider>
+      <App />
+    </TodoProvider>
   </React.StrictMode>
 );
 

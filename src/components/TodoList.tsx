@@ -1,14 +1,14 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Todo } from "../models/Todo";
 import TodoListemItem from "./TodoListItem";
+import { TodoContextType } from "../contexts/TodoContextType";
+import { TodoContext } from "../contexts/todoContex";
 
 
 const TodoList: React.FC = () => {
 
+    const { todo } = useContext<TodoContextType>(TodoContext);
 
-    const Todosrs: Todo[] = [
-    
-    ];
     return (
         <>
             <table className="uk-table uk-table-striped">
@@ -23,7 +23,7 @@ const TodoList: React.FC = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {Todosrs?.map((todo) => (
+                    {todo?.map((todo) => (
                         <TodoListemItem key={todo.id} taks={todo} />
                     ))}
                 </tbody>

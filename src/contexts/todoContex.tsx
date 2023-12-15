@@ -10,7 +10,7 @@ export const TodoContext = createContext<TodoContextType>({
 
 })
 
-const todoProvider = (props: any) => {
+const TodoProvider = (props: any) => {
     const todo: Todo[] = [{
         id: 1,
         task: "Task 1",
@@ -34,7 +34,6 @@ const todoProvider = (props: any) => {
             removeTodo,
             toggle
         }}
-
         >
             {props.children}
         </TodoContext.Provider>
@@ -42,4 +41,4 @@ const todoProvider = (props: any) => {
 
 }
 
-export default todoProvider;
+export default TodoProvider;
