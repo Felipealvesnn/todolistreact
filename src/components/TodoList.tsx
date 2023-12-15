@@ -24,7 +24,7 @@ const TodoList: React.FC = () => {
                 </thead>
                 <tbody>
                     {todo?.map((todo) => (
-                        <TodoListemItem key={todo.id} taks={todo} />
+                        <TodoListemItem key={todo.id} task={todo} />
                     ))}
                 </tbody>
             </table>

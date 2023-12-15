@@ -23,7 +23,7 @@ const TodoListItem = (props: TodoListItemProps) => {
     };
 
     const handleEditClick = () => {
-        setIsEditing(true);
+        setIsEditing(!isEditing);
     };
 
     const closeModal = () => {
