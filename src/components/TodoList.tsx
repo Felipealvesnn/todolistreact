@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { Todo } from "../models/Todo";
+import TodoListemItem from "./TodoListItem";
 
 
 const TodoList: React.FC = () => {
 
-    const [task, setTask] = useState<string>("");
-    const Todos: Todo[] = [{
+
+    const Todosrs: Todo[] = [{
         id: 1,
         task: "Task 1",
         description: "Description 1",
@@ -15,33 +16,30 @@ const TodoList: React.FC = () => {
         id: 2,
         task: "Task 2",
         description: "Description 2",
-        done: false
+        done: true
     },
     ];
-
+    const [todos, setTodos] = useState(Todosrs);
     return (
-        <div>
+        <>
+            <table className="uk-table uk-table-striped">
+                <caption>Lista de tarefas</caption>
+                <thead>
+                    <tr>
+                        <th>feito?</th>
+                        <th>Task</th>
+                        <th>Description</th>
 
-            <div className="uk-container">
-                <div className="uk-card uk-card-default uk-card-body">
-                    <form>
-                        <fieldset className="uk-fieldset">
-                            <div className="uk-margin">
-                                <input className="uk-input" type="text"
-                                    placeholder="Task" />
-
-                            </div>
-                            <div className="uk-margin">
-                                <textarea className="uk-textarea" rows={5} placeholder="Description"></textarea>
-                            </div>
-                            <div className="uk-margin">
-                                <button className="uk-button uk-button-primary">Add</button>
-                            </div>
-                        </fieldset>
-                    </form>
-                </div>
-            </div>
-        </div>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {todos?.map((todo) => (
+                        <TodoListemItem key={todo.id} taks={todo} />
+                    ))}
+                </tbody>
+            </table>
+        </>
     )
 }
 export default TodoList;

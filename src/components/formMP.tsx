@@ -2,39 +2,28 @@ import React from 'react';
 
 const CheckoutForm = () => {
   return (
-    <>
-      <style>
-        {`
-          #form-checkout {
-            display: flex;
-            flex-direction: column;
-            max-width: 600px;
-          }
+    <div>
 
-          .container {
-            height: 18px;
-            display: inline-block;
-            border: 1px solid rgb(118, 118, 118);
-            border-radius: 2px;
-            padding: 1px 2px;
-          }
-        `}
-      </style>
-      <form id="form-checkout">
-        <div id="form-checkout__cardNumber" className="container"></div>
-        <div id="form-checkout__expirationDate" className="container"></div>
-        <div id="form-checkout__securityCode" className="container"></div>
-        <input type="text" id="form-checkout__cardholderName" />
-        <select id="form-checkout__issuer"></select>
-        <select id="form-checkout__installments"></select>
-        <select id="form-checkout__identificationType"></select>
-        <input type="text" id="form-checkout__identificationNumber" />
-        <input type="email" id="form-checkout__cardholderEmail" />
+      <div className="uk-container">
+        <div className="uk-card uk-card-default uk-card-body">
+          <form>
+            <fieldset className="uk-fieldset">
+              <div className="uk-margin">
+                <input className="uk-input" type="text"
+                  placeholder="Task" />
 
-        <button type="submit" id="form-checkout__submit">Pagar</button>
-        <progress value="0" className="progress-bar">Carregando...</progress>
-      </form>
-    </>
+              </div>
+              <div className="uk-margin">
+                <textarea className="uk-textarea" rows={5} placeholder="Description"></textarea>
+              </div>
+              <div className="uk-margin">
+                <button className="uk-button uk-button-primary">Add</button>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
   );
 }
 
