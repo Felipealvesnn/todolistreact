@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Todo } from '../models/todo';
 import { TodoContextType } from '../contexts/TodoContextType';
 import { TodoContext } from '../contexts/todoContex';
+import { Link } from 'react-router-dom'; // Importe o Link
 
 const PageContainer = styled.div`
   font-family: 'Arial', sans-serif;
@@ -36,19 +37,22 @@ const TableCell = styled.td`
 `;
 
 const TaskListPage: React.FC = () => {
-  const { todo, toggle, removeTodo } = useContext<TodoContextType>(TodoContext)!;
+  const { todo, toggle, removeTodo, addTodo } = useContext<TodoContextType>(TodoContext)!;
 
   return (
     <PageContainer>
       <h1>Lista de Tarefas</h1>
+      {/* Use o Link para navegar para a página de formulário */}
+      <Link to="/nova-tarefa">Adicionar Nova Tarefa</Link>
+
       <TodoTable>
         <thead>
-          <tr>
+          <TableRow>
             <TableHeader>Tarefa</TableHeader>
             <TableHeader>Descrição</TableHeader>
             <TableHeader>Feito</TableHeader>
             <TableHeader>Ações</TableHeader>
-          </tr>
+          </TableRow>
         </thead>
         <tbody>
           {todo.map((task: Todo) => (
