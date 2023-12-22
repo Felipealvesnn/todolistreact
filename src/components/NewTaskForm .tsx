@@ -3,7 +3,7 @@ import React, { useContext, useState } from 'react';
 import styled from 'styled-components';
 import { TodoContext } from '../contexts/todoContex';
 import { TodoContextType } from '../contexts/TodoContextType';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate  } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 const FormContainer = styled.div`
@@ -54,6 +54,7 @@ const NewTaskForm: React.FC = () => {
     const [task, setTask] = useState('');
     const [description, setDescription] = useState('');
     const { addTodo } = useContext<TodoContextType>(TodoContext)!;
+    const history = useNavigate();
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -64,6 +65,7 @@ const NewTaskForm: React.FC = () => {
         }
         addTodo(task, description);
         // Limpar os campos após a adição da tarefa
+        history('/');
         setTask('');
         setDescription('');
     };
