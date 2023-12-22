@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Todo } from '../models/todo';
 import { TodoContextType } from '../contexts/TodoContextType';
 import { TodoContext } from '../contexts/todoContex';
-import { Link } from 'react-router-dom'; // Importe o Link
+import { Link, } from 'react-router-dom'; // Importe o Link
 
 const PageContainer = styled.div`
   font-family: 'Arial', sans-serif;
@@ -32,14 +32,7 @@ const TableRow = styled.tr`
   }
 `;
 const GreenButton = styled(Link)`
-  width: 200px;
-  background-color: #2e51cc; 
-  color: #fff;
-  padding: 10px;
-  cursor: pointer;
-  text-decoration: none;
-  display: inline-block;
-  margin-top: 10px;
+  uk-button uk-button-primary
 `;
 
 const TableCell = styled.td`
