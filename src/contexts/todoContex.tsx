@@ -1,15 +1,16 @@
 // Importe os tipos necessários e o useState, se ainda não estiverem importados
 import React, { createContext, useState } from 'react';
 import { Todo } from '../models/todo';
+import { TodoContextType } from './TodoContextType';
 
 
 
-export const TodoContext = createContext<{
-    todo: Todo[];
-    addTodo: (task: string, description: string) => void;
-    removeTodo: (todo: Todo) => void;
-    toggle: (editedTodo: Todo) => void;
-} | undefined>(undefined);
+export const TodoContext = createContext<TodoContextType>({
+    todo: [],
+    addTodo: () => { },
+    removeTodo: () => { },
+    toggle: () => { }
+});
 
 const TodoProvider = (props: any) => {
     // Estado para armazenar a lista de tarefas

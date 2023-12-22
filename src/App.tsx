@@ -1,11 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
+
 import './App.css';
+import TaskListPage from './components/TaskListPage ';
+import { TodoContext } from './contexts/todoContex';
+import { useContext } from 'react';
 
 function App() {
+  const {todo} = useContext(TodoContext);
+
+  
   return (
     <div className="App">
-      <h1>teste</h1>
+      <TaskListPage />
     </div>
   );
 }

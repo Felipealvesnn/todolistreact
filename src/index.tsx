@@ -7,12 +7,12 @@ import TodoProvider from './contexts/todoContex';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
-); TodoProvider
+); 
 root.render(
   <React.StrictMode>
     <TodoProvider>
       <App />
-  </TodoProvider>
+   </TodoProvider>
 
   </React.StrictMode>
 );
