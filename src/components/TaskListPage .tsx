@@ -31,6 +31,16 @@ const TableRow = styled.tr`
     background-color: #f2f2f2;
   }
 `;
+const GreenButton = styled(Link)`
+  width: 200px;
+  background-color: #2e51cc; 
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 10px;
+`;
 
 const TableCell = styled.td`
   padding: 10px;
@@ -43,7 +53,8 @@ const TaskListPage: React.FC = () => {
     <PageContainer>
       <h1>Lista de Tarefas</h1>
       {/* Use o Link para navegar para a página de formulário */}
-      <Link to="/nova-tarefa">Adicionar Nova Tarefa</Link>
+     <GreenButton to="/nova-tarefa">Adicionar Nova Tarefa</GreenButton>
+    
 
       <TodoTable>
         <thead>

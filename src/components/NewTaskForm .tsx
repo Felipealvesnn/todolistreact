@@ -30,12 +30,13 @@ const Input = styled.input`
 `;
 const GreenButton = styled(Link)`
   width: 153px;
+  justify-content: center;
   background-color: #2ecc71;  // Cor verde
   color: #fff;
   padding: 10px;
   cursor: pointer;
   text-decoration: none;
-  display: inline-block;
+  display: flex;
   margin-top: 10px;
 `;
 
@@ -79,7 +80,7 @@ const NewTaskForm: React.FC = () => {
 
                 <Button type="submit">Adicionar Tarefa</Button>
                 <GreenButton to="/">Voltar para a Página</GreenButton>
-                <Link to="/">voltar pra pagina</Link>
+                {/* <Link to="/">voltar pra pagina</Link> */}
             </Form>
         </FormContainer>
     );
