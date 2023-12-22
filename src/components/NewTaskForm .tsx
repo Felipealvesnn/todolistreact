@@ -3,8 +3,14 @@ import React, { useContext, useState } from 'react';
 import styled from 'styled-components';
 import { TodoContext } from '../contexts/todoContex';
 import { TodoContextType } from '../contexts/TodoContextType';
+import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const FormContainer = styled.div`
+  display: flex;  
+  flex-direction: column;
+  justify-content: center;
+  height: 90vh;
   max-width: 400px;
   margin: 20px auto;
 `;
@@ -22,6 +28,17 @@ const Input = styled.input`
   padding: 8px;
   margin-bottom: 16px;
 `;
+const GreenButton = styled(Link)`
+  width: 153px;
+  background-color: #2ecc71;  // Cor verde
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 10px;
+`;
+
 
 const Button = styled.button`
   background-color: #3498db;
@@ -29,18 +46,21 @@ const Button = styled.button`
   padding: 10px;
   cursor: pointer;
 `;
-interface NewTaskFormProps {
-    onAddTask: (task: string, description: string) => void;
-}
 
 
-const NewTaskForm: React.FC= () => {
+
+const NewTaskForm: React.FC = () => {
     const [task, setTask] = useState('');
     const [description, setDescription] = useState('');
-    const {  addTodo } = useContext<TodoContextType>(TodoContext)!;
+    const { addTodo } = useContext<TodoContextType>(TodoContext)!;
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
+        if (task.trim() === '' || description.trim() === '') {
+            // Mostrar uma notificação se os campos estiverem vazios
+            toast.error('Por favor, preencha todos os campos.');
+            return;
+        }
         addTodo(task, description);
         // Limpar os campos após a adição da tarefa
         setTask('');
@@ -58,6 +78,8 @@ const NewTaskForm: React.FC= () => {
                 <Input type="text" value={description} onChange={(e) => setDescription(e.target.value)} />
 
                 <Button type="submit">Adicionar Tarefa</Button>
+                <GreenButton to="/">Voltar para a Página</GreenButton>
+                <Link to="/">voltar pra pagina</Link>
             </Form>
         </FormContainer>
     );

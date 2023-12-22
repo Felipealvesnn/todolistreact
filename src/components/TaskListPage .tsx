@@ -37,7 +37,7 @@ const TableCell = styled.td`
 `;
 
 const TaskListPage: React.FC = () => {
-  const { todo, toggle, removeTodo, addTodo } = useContext<TodoContextType>(TodoContext)!;
+  const { todo, toggle, removeTodo } = useContext<TodoContextType>(TodoContext)!;
 
   return (
     <PageContainer>

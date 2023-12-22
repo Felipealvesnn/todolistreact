@@ -1,29 +1,22 @@
-
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import './App.css';
 import TaskListPage from './components/TaskListPage ';
-import { TodoContext } from './contexts/todoContex';
-import { useContext } from 'react';
 import NewTaskForm from './components/NewTaskForm ';
 
 function App() {
-  const { todo } = useContext(TodoContext);
-
-
   return (
-    <>
-      <Router>
-        <Routes>
-          <Route path="/" Component={TaskListPage} />
-          <Route path="/nova-tarefa" Component={NewTaskForm} />
-        </Routes>
-      </Router>
+    <Router>
+      <Routes>
+        <Route path="/" element={<TaskListPage />} />
+        <Route path="/nova-tarefa" element={<NewTaskForm />} />
+      </Routes>
 
       <div className="App">
-        <TaskListPage />
+        {/* Remova essa linha */}
+        {/* <TaskListPage /> */}
       </div>
-    </>
+    </Router>
   );
 }
 
